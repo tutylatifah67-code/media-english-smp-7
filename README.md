@@ -1,1 +1,613 @@
-# media-english-smp-7
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Interaktif SMP - Describing People & Objects | Festival Biru Putih 2026</title>
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; }
+        .bg-biru-kemendikdasmen { background-color: #003366; }
+        .text-biru-kemendikdasmen { color: #003366; }
+        .btn-gold { background-color: #f39c12; color: white; }
+        .btn-gold:hover { background-color: #d68910; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 1rem; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-gray-800">
+
+    <!-- HEADER / NAVIGASI UTAMA -->
+    <header class="bg-biru-kemendikdasmen text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white p-2 rounded-full text-biru-kemendikdasmen font-bold text-xl w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">ENGLISH EXPLORER: DESCRIBING WORLD</h1>
+                    <p class="text-xs text-blue-200">Festival Biru Putih 2026 • Bahasa Inggris Kelas 7 SMP</p>
+                </div>
+            </div>
+            
+            <!-- Menu Navigasi Non-Linear -->
+            <nav class="hidden md:flex space-x-2 text-sm font-semibold">
+                <button onclick="switchTab('beranda')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-home mr-1"></i> Beranda</button>
+                <button onclick="switchTab('panduan')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-book-reader mr-1"></i> Panduan & CP</button>
+                <button onclick="switchTab('materi')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-lightbulb mr-1"></i> Modul Materi</button>
+                <button onclick="switchTab('latihan')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-gamepad mr-1"></i> Latihan Interaktif</button>
+                <button onclick="switchTab('kuis')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-tasks mr-1"></i> Evaluasi Kuis</button>
+                <button onclick="switchTab('dasbor')" class="px-3 py-2 rounded hover:bg-blue-800 transition"><i class="fas fa-chart-line mr-1"></i> Dasbor Hasil</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA APLIKASI -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
+
+        <!-- HLMN 1: BERANDA -->
+        <section id="beranda" class="fade-in">
+            <div class="glass-card p-8 shadow-xl text-center border-t-4 border-yellow-500 my-4">
+                <span class="bg-blue-100 text-biru-kemendikdasmen text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Media Interaktif SMP • Kurikulum Merdeka</span>
+                <h2 class="text-3xl font-extrabold text-gray-800 mt-4 mb-2">Welcome to Interactive English Learning!</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-6">Aplikasi pembelajaran lengkap untuk menguasai pengungkapan ciri fisik, sifat, benda, hewan, dan tempat (Descriptive Text) Fase D Kelas 7.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8 text-left">
+                    <div class="p-5 border rounded-xl bg-blue-50 border-blue-200">
+                        <i class="fas fa-volume-up text-3xl text-blue-600 mb-2"></i>
+                        <h3 class="font-bold text-lg mb-1">Audio Native Pronunciation</h3>
+                        <p class="text-sm text-gray-600">Dengarkan pelafalan kosakata dan contoh kalimat secara mandiri menggunakan fitur Web Speech API.</p>
+                    </div>
+                    <div class="p-5 border rounded-xl bg-yellow-50 border-yellow-200">
+                        <i class="fas fa-puzzle-piece text-3xl text-yellow-600 mb-2"></i>
+                        <h3 class="font-bold text-lg mb-1">3 Level Sentence Builder</h3>
+                        <p class="text-sm text-gray-600">Simulasi penyusunan kalimat deskriptif interaktif untuk meningkatkan pemahaman struktur kata.</p>
+                    </div>
+                    <div class="p-5 border rounded-xl bg-green-50 border-green-200">
+                        <i class="fas fa-award text-3xl text-green-600 mb-2"></i>
+                        <h3 class="font-bold text-lg mb-1">Evaluasi HOTS & Pembahasan</h3>
+                        <p class="text-sm text-gray-600">5 Soal evaluasi analisis dengan umpan balik dan analisis skor yang tercatat di dasbor.</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <button onclick="switchTab('materi')" class="btn-gold font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"><i class="fas fa-play mr-2"></i> Mulai Belajar Now</button>
+                    <button onclick="switchTab('panduan')" class="bg-gray-200 text-gray-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-300 transition"><i class="fas fa-info-circle mr-2"></i> Petunjuk & CP</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HLMN 2: PANDUAN & CAPAIAN PEMBELAJARAN -->
+        <section id="panduan" class="hidden fade-in">
+            <div class="glass-card p-6 shadow-md border-l-4 border-blue-600 mb-6">
+                <h2 class="text-2xl font-bold text-biru-kemendikdasmen mb-4"><i class="fas fa-book-open mr-2"></i> Panduan Penggunaan & Capaian Pembelajaran</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 border-b pb-2"><i class="fas fa-bullseye text-red-500 mr-2"></i> Capaian Pembelajaran (Fase D - Kelas 7)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
+                            <li><strong>Membaca & Memirsa:</strong> Siswa menganalisis teks deskriptif lisan dan tulis mengenai orang, hewan, dan benda di lingkungan sekitar.</li>
+                            <li><strong>Menulis & Mempresentasikan:</strong> Siswa mengomunikasikan gagasan secara terstruktur menggunakan Adjective Order, Pronouns, dan Simple Present Tense.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 border-b pb-2"><i class="fas fa-hands-helping text-blue-500 mr-2"></i> Alur Belajar Siswa</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
+                            <li>Pelajari 4 topik lengkap pada menu **Modul Materi**.</li>
+                            <li>Selesaikan 3 tantangan penyusunan kalimat pada menu **Latihan Interaktif**.</li>
+                            <li>Uji pemahaman melalui 5 soal pada **Evaluasi Kuis**.</li>
+                            <li>Isi refleksi pembelajaran pada **Dasbor Hasil**.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HLMN 3: MODUL MATERI TERLENGKAP (4 SUB-MODUL) -->
+        <section id="materi" class="hidden fade-in">
+            <div class="glass-card p-6 shadow-md mb-6">
+                <h2 class="text-2xl font-bold text-biru-kemendikdasmen mb-4"><i class="fas fa-laptop-code mr-2"></i> Modul Pembelajaran Interaktif</h2>
+                
+                <!-- Sub Tab Navigasi Materi -->
+                <div class="flex flex-wrap border-b mb-6 gap-2">
+                    <button onclick="showSubMateri('vocab-people')" class="py-2 px-4 border-b-2 border-blue-600 font-bold text-blue-600 subtab-btn" id="btn-vocab-people">1. Describing People</button>
+                    <button onclick="showSubMateri('vocab-objects')" class="py-2 px-4 border-b-2 border-transparent font-bold text-gray-500 hover:text-blue-600 subtab-btn" id="btn-vocab-objects">2. Describing Objects & Animals</button>
+                    <button onclick="showSubMateri('grammar')" class="py-2 px-4 border-b-2 border-transparent font-bold text-gray-500 hover:text-blue-600 subtab-btn" id="btn-grammar">3. Grammar & Adjective Order</button>
+                    <button onclick="showSubMateri('structure')" class="py-2 px-4 border-b-2 border-transparent font-bold text-gray-500 hover:text-blue-600 subtab-btn" id="btn-structure">4. Text Structure & Example</button>
+                </div>
+
+                <!-- SUB 1: DESCRIBING PEOPLE -->
+                <div id="sub-vocab-people" class="sub-materi">
+                    <p class="text-sm text-gray-600 mb-4">Klik kartu kosakata berikut untuk mendengarkan pengucapan kata (*audio pronunciation*):</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div onclick="speakText('Friendly')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">😊</span>
+                            <h4 class="font-bold text-lg mt-2">Friendly</h4>
+                            <p class="text-xs text-gray-500">Ramah / Bersahabat</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Diligent')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">📚</span>
+                            <h4 class="font-bold text-lg mt-2">Diligent</h4>
+                            <p class="text-xs text-gray-500">Rajin / Tekun</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Curly Hair')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">👨‍🦱</span>
+                            <h4 class="font-bold text-lg mt-2">Curly Hair</h4>
+                            <p class="text-xs text-gray-500">Rambut Keriting</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Generous')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">🎁</span>
+                            <h4 class="font-bold text-lg mt-2">Generous</h4>
+                            <p class="text-xs text-gray-500">Murah Hati / Dermawan</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB 2: DESCRIBING OBJECTS & ANIMALS -->
+                <div id="sub-vocab-objects" class="sub-materi hidden">
+                    <p class="text-sm text-gray-600 mb-4">Kosakata bentuk, ukuran, dan sifat objek/hewan:</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div onclick="speakText('Spacious')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">🏫</span>
+                            <h4 class="font-bold text-lg mt-2">Spacious</h4>
+                            <p class="text-xs text-gray-500">Luas / Lapang</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Rectangular')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">📏</span>
+                            <h4 class="font-bold text-lg mt-2">Rectangular</h4>
+                            <p class="text-xs text-gray-500">Persegi Panjang</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Playful Cat')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">🐱</span>
+                            <h4 class="font-bold text-lg mt-2">Playful</h4>
+                            <p class="text-xs text-gray-500">Lincah / Suka Bermain</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                        <div onclick="speakText('Fluffy Fur')" class="cursor-pointer p-4 bg-white border-2 border-blue-200 rounded-xl text-center hover:border-yellow-500 hover:shadow-md transition">
+                            <span class="text-3xl">🐰</span>
+                            <h4 class="font-bold text-lg mt-2">Fluffy Fur</h4>
+                            <p class="text-xs text-gray-500">Bulu Halus/Lebat</p>
+                            <button class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Dengarkan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB 3: GRAMMAR & ADJECTIVE ORDER -->
+                <div id="sub-grammar" class="sub-materi hidden">
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <h3 class="font-bold text-gray-800 text-lg mb-2">1. Pola Simple Present Tense</h3>
+                            <p class="text-sm text-gray-700 mb-3">Teks deskriptif menggunakan fakta/kebenaran umum:</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li><strong>Nominal Sentence:</strong> Subject + to be (is/am/are) + Adjective/Noun.</li>
+                                <li><strong>Verbal Sentence:</strong> Subject + Verb-1 (-s/-es) + Object.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h3 class="font-bold text-gray-800 text-lg mb-2">2. Urutan Kata Sifat (Adjective Order)</h3>
+                            <p class="text-sm text-gray-700 mb-2">Saat mendeskripsikan benda dengan lebih dari satu kata sifat, gunakan urutan: <strong>Opinion + Size + Color</strong>.</p>
+                            <div class="p-3 bg-white rounded border flex justify-between items-center">
+                                <span class="text-sm"><em>Contoh:</em> "A <strong>beautiful</strong> (Opinion) <strong>big</strong> (Size) <strong>black</strong> (Color) cat."</span>
+                                <button onclick="speakText('A beautiful big black cat.')" class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 text-xs"><i class="fas fa-volume-up"></i> Listen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB 4: TEXT STRUCTURE & EXAMPLE -->
+                <div id="sub-structure" class="sub-materi hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 border-2 border-dashed border-blue-400 bg-blue-50 rounded-xl">
+                            <h4 class="font-bold text-blue-900 border-b pb-1 mb-2">1. Identification (Pengenalan)</h4>
+                            <p class="text-sm text-gray-700">Mengenalkan objek/orang yang dibahas.</p>
+                            <div class="p-2 bg-white rounded mt-2 border">
+                                <p class="text-xs italic text-gray-600">"My favorite English teacher is Mr. Ahmad. He teaches grade 7 in our school."</p>
+                                <button onclick="speakText('My favorite English teacher is Mr. Ahmad. He teaches grade 7 in our school.')" class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Putar Audio</button>
+                            </div>
+                        </div>
+                        <div class="p-4 border-2 border-dashed border-green-400 bg-green-50 rounded-xl">
+                            <h4 class="font-bold text-green-900 border-b pb-1 mb-2">2. Description (Rincian Sifat)</h4>
+                            <p class="text-sm text-gray-700">Menjelaskan detail fisik, sifat, dan kebiasaan.</p>
+                            <div class="p-2 bg-white rounded mt-2 border">
+                                <p class="text-xs italic text-gray-600">"He has short black hair and always wears glasses. He is very patient and friendly to all students."</p>
+                                <button onclick="speakText('He has short black hair and always wears glasses. He is very patient and friendly to all students.')" class="mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fas fa-volume-up"></i> Putar Audio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HLMN 4: LATIHAN INTERAKTIF MULTI-LEVEL -->
+        <section id="latihan" class="hidden fade-in">
+            <div class="glass-card p-6 shadow-md mb-6">
+                <h2 class="text-2xl font-bold text-biru-kemendikdasmen mb-2"><i class="fas fa-puzzle-piece mr-2"></i> Latihan Interaktif: Sentence Builder</h2>
+                <p class="text-sm text-gray-600 mb-4">Pilih level latihan di bawah ini dan klik kata-kata untuk menyusun kalimat deskriptif secara tepat!</p>
+
+                <!-- Pilih Level -->
+                <div class="flex space-x-2 mb-4">
+                    <button onclick="loadLevel(0)" id="lvl-btn-0" class="px-3 py-1 rounded font-bold text-sm bg-blue-600 text-white">Level 1: Describing People</button>
+                    <button onclick="loadLevel(1)" id="lvl-btn-1" class="px-3 py-1 rounded font-bold text-sm bg-gray-200 text-gray-700">Level 2: Describing Objects</button>
+                    <button onclick="loadLevel(2)" id="lvl-btn-2" class="px-3 py-1 rounded font-bold text-sm bg-gray-200 text-gray-700">Level 3: Describing Animals</button>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-xl mb-4 border min-h-[80px] flex items-center flex-wrap gap-2" id="drop-zone">
+                    <span class="text-gray-400 text-sm italic" id="placeholder-text">Klik pilihan kata di bawah untuk menyusun kalimat...</span>
+                </div>
+
+                <!-- Tombol Opsi Kata (Dinamis via JS) -->
+                <div class="flex flex-wrap gap-2 mb-4" id="word-buttons"></div>
+
+                <div class="flex space-x-3">
+                    <button onclick="checkSentence()" class="bg-green-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-green-700 text-sm"><i class="fas fa-check-circle mr-1"></i> Periksa Jawaban</button>
+                    <button onclick="resetSentence()" class="bg-red-500 text-white font-bold px-4 py-2 rounded-lg hover:bg-red-600 text-sm"><i class="fas fa-undo mr-1"></i> Reset</button>
+                </div>
+                
+                <div id="sentence-feedback" class="mt-4 hidden p-3 rounded-lg font-semibold text-sm"></div>
+            </div>
+        </section>
+
+        <!-- HLMN 5: EVALUASI KUIS (5 SOAL HOTS DENGAN PEMBAHASAN) -->
+        <section id="kuis" class="hidden fade-in">
+            <div class="glass-card p-6 shadow-md mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-biru-kemendikdasmen"><i class="fas fa-file-alt mr-2"></i> Evaluasi Kuis Interaktif (5 Soal)</h2>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">HOTS Assessment</span>
+                </div>
+
+                <!-- Form 5 Soal Kuis -->
+                <div id="quiz-container" class="space-y-6">
+                    
+                    <!-- Soal 1 -->
+                    <div class="p-4 bg-gray-50 rounded-xl border">
+                        <p class="font-bold text-gray-800 mb-2">1. Read the text: "Rina is a helpful student. She always assists her classmates when they face difficulties." What is the main character trait of Rina?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q1" value="A"> <span>A. Difficult</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q1" value="B"> <span>B. Helpful</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q1" value="C"> <span>C. Lazy</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="p-4 bg-gray-50 rounded-xl border">
+                        <p class="font-bold text-gray-800 mb-2">2. Which sentence correctly describes a school library in Simple Present Tense?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q2" value="A"> <span>A. The library is quiet and has many interesting books.</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q2" value="B"> <span>B. The library was quiet yesterday.</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q2" value="C"> <span>C. The library will be quiet tomorrow.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="p-4 bg-gray-50 rounded-xl border">
+                        <p class="font-bold text-gray-800 mb-2">3. Choose the correct Adjective Order (Opinion + Size + Color) to describe a hat:</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q3" value="A"> <span>A. A red big nice hat</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q3" value="B"> <span>B. A nice big red hat</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q3" value="C"> <span>C. A big red nice hat</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="p-4 bg-gray-50 rounded-xl border">
+                        <p class="font-bold text-gray-800 mb-2">4. What is the main purpose of the "Identification" section in a Descriptive Text?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q4" value="A"> <span>A. To introduce the topic or person being described.</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q4" value="B"> <span>B. To conclude the whole story.</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q4" value="C"> <span>C. To give steps on how to do something.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 5 -->
+                    <div class="p-4 bg-gray-50 rounded-xl border">
+                        <p class="font-bold text-gray-800 mb-2">5. Complete the sentence: "My cat _____ soft white fur and blue eyes."</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q5" value="A"> <span>A. have</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q5" value="B"> <span>B. has</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-white p-2 rounded border cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="q5" value="C"> <span>C. is</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button onclick="submitQuiz()" class="btn-gold font-bold px-6 py-3 rounded-lg w-full text-center shadow-md"><i class="fas fa-paper-plane mr-2"></i> Kirim Jawaban & Lihat Analisis Skor</button>
+                </div>
+
+                <!-- Result & Feedback Box -->
+                <div id="quiz-result" class="hidden text-center p-6 bg-blue-50 rounded-xl border border-blue-200 mt-4">
+                    <h3 class="text-2xl font-bold text-biru-kemendikdasmen mb-2">Hasil Evaluasi Kuis</h3>
+                    <div class="text-5xl font-extrabold text-yellow-600 my-2" id="score-text">0</div>
+                    <p class="text-sm text-gray-700 font-semibold mb-4" id="feedback-text">Kerjakan kuis untuk melihat hasil.</p>
+
+                    <!-- Analisis Jawaban -->
+                    <div class="text-left bg-white p-4 rounded-lg border text-xs space-y-2">
+                        <h4 class="font-bold text-gray-800 border-b pb-1">Kunci Jawaban & Pembahasan:</h4>
+                        <p><strong>1. B (Helpful):</strong> Teks menyebutkan Rina selalu membantu (*assists*) temannya.</p>
+                        <p><strong>2. A:</strong> Menjelaskan ciri perpustakaan menggunakan Simple Present Tense (*is quiet*).</p>
+                        <p><strong>3. B (A nice big red hat):</strong> Urutan Adjective Order yang tepat: Opinion (*nice*) + Size (*big*) + Color (*red*).</p>
+                        <p><strong>4. A:</strong> Bagian Identification berfungsi mengenalkan objek atau subjek utama teks.</p>
+                        <p><strong>5. B (has):</strong> Subjek tunggal (*My cat*) menggunakan kata kerja kepemilikan *has*.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HLMN 6: DASBOR HASIL & REFLEKSI MANDIRI -->
+        <section id="dasbor" class="hidden fade-in">
+            <div class="glass-card p-6 shadow-md mb-6">
+                <h2 class="text-2xl font-bold text-biru-kemendikdasmen mb-4"><i class="fas fa-chart-line mr-2"></i> Dasbor Capaian & Refleksi Siswa</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-white border rounded-xl shadow-sm">
+                        <h3 class="font-bold text-gray-800 mb-3 border-b pb-2"><i class="fas fa-user-check text-green-500 mr-2"></i> Status Capaian Belajar</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1">
+                                    <span>Modul Materi Interaktif</span>
+                                    <span class="text-green-600">100% Selesai</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full"><div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1">
+                                    <span>Latihan Sentence Builder</span>
+                                    <span id="progress-latihan" class="text-blue-600">0 / 3 Selesai</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full"><div id="bar-latihan" class="bg-blue-500 h-2 rounded-full" style="width: 0%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1">
+                                    <span>Evaluasi Kuis HOTS</span>
+                                    <span id="progress-kuis" class="text-yellow-600">Belum Dikerjakan</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-2 rounded-full"><div id="bar-kuis" class="bg-yellow-500 h-2 rounded-full" style="width: 0%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Refleksi Jurnal -->
+                    <div class="p-5 bg-white border rounded-xl shadow-sm">
+                        <h3 class="font-bold text-gray-800 mb-2"><i class="fas fa-edit text-yellow-500 mr-2"></i> Jurnal Refleksi Siswa</h3>
+                        <p class="text-xs text-gray-500 mb-2">Tuliskan pemahaman baru atau hal menarik dari pembelajaran hari ini:</p>
+                        <textarea id="refleksi-input" rows="4" class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Saya sekarang mengerti urutan kata sifat seperti 'nice big red hat'..."></textarea>
+                        <button onclick="saveReflection()" class="mt-2 text-xs bg-biru-kemendikdasmen text-white font-bold px-3 py-2 rounded hover:bg-blue-800">Simpan Jurnal Refleksi</button>
+                        <p id="refleksi-msg" class="text-xs text-green-600 mt-1 hidden"><i class="fas fa-check"></i> Refleksi Anda berhasil disimpan di browser!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-biru-kemendikdasmen text-white text-center py-4 text-xs mt-6">
+        <p>© 2026 Media Interaktif Pembelajaran Bahasa Inggris SMP • Dirancang untuk Festival Biru Putih (Direktorat SMP, Kemendikdasmen)</p>
+    </footer>
+
+    <!-- LOGIKA JAVASCRIPT APLIKASI -->
+    <script>
+        // 1. NAVIGASI TAB NON-LINEAR
+        function switchTab(tabId) {
+            const sections = ['beranda', 'panduan', 'materi', 'latihan', 'kuis', 'dasbor'];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 2. MULTIMEDIA AUDIO (WEB SPEECH API)
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Browser Anda tidak mendukung fitur Audio Playback.");
+            }
+        }
+
+        // 3. SUB TAB MATERI
+        function showSubMateri(subId) {
+            document.querySelectorAll('.sub-materi').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.subtab-btn').forEach(btn => {
+                btn.classList.remove('border-blue-600', 'text-blue-600');
+                btn.classList.add('border-transparent', 'text-gray-500');
+            });
+            
+            document.getElementById('sub-' + subId).classList.remove('hidden');
+            document.getElementById('btn-' + subId).classList.add('border-blue-600', 'text-blue-600');
+        }
+
+        // 4. LATIHAN INTERAKTIF MULTI-LEVEL (SENTENCE BUILDER)
+        const levels = [
+            {
+                words: ["She", "has", "long", "black", "hair."],
+                target: "She has long black hair."
+            },
+            {
+                words: ["Our", "classroom", "is", "clean", "and", "spacious."],
+                target: "Our classroom is clean and spacious."
+            },
+            {
+                words: ["The", "rabbit", "has", "soft", "white", "fur."],
+                target: "The rabbit has soft white fur."
+            }
+        ];
+
+        let currentLevel = 0;
+        let currentSentence = [];
+        let completedLevels = new Set();
+
+        function loadLevel(lvlIndex) {
+            currentLevel = lvlIndex;
+            currentSentence = [];
+            
+            // Highlight Level Active Button
+            for(let i=0; i<3; i++) {
+                const btn = document.getElementById('lvl-btn-' + i);
+                if(i === lvlIndex) {
+                    btn.className = "px-3 py-1 rounded font-bold text-sm bg-blue-600 text-white";
+                } else {
+                    btn.className = "px-3 py-1 rounded font-bold text-sm bg-gray-200 text-gray-700";
+                }
+            }
+
+            // Shuffle / Mix Words for Display
+            const wordButtonsContainer = document.getElementById('word-buttons');
+            wordButtonsContainer.innerHTML = '';
+            
+            const shuffledWords = [...levels[lvlIndex].words].sort(() => Math.random() - 0.5);
+            shuffledWords.forEach(w => {
+                const btn = document.createElement('button');
+                btn.className = "word-btn bg-white border-2 border-blue-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 text-sm";
+                btn.innerText = w;
+                btn.onclick = () => addWord(w);
+                wordButtonsContainer.appendChild(btn);
+            });
+
+            updateDropZone();
+            document.getElementById('sentence-feedback').classList.add('hidden');
+        }
+
+        function addWord(word) {
+            currentSentence.push(word);
+            updateDropZone();
+        }
+
+        function updateDropZone() {
+            const dropZone = document.getElementById('drop-zone');
+            if(currentSentence.length === 0) {
+                dropZone.innerHTML = '<span class="text-gray-400 text-sm italic">Klik pilihan kata di bawah untuk menyusun kalimat...</span>';
+            } else {
+                dropZone.innerHTML = currentSentence.map(w => `<span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">${w}</span>`).join(" ");
+            }
+        }
+
+        function resetSentence() {
+            currentSentence = [];
+            updateDropZone();
+            document.getElementById('sentence-feedback').classList.add('hidden');
+        }
+
+        function checkSentence() {
+            const result = currentSentence.join(" ");
+            const target = levels[currentLevel].target;
+            const feedback = document.getElementById('sentence-feedback');
+            feedback.classList.remove('hidden');
+
+            if(result === target) {
+                feedback.className = "mt-4 p-3 rounded-lg font-semibold text-sm bg-green-100 text-green-800 border border-green-300";
+                feedback.innerHTML = "<i class='fas fa-check-circle mr-1'></i> Excellent! Kalimat berhasil disusun dengan benar.";
+                
+                completedLevels.add(currentLevel);
+                updateProgressLatihan();
+                speakText(target);
+            } else {
+                feedback.className = "mt-4 p-3 rounded-lg font-semibold text-sm bg-red-100 text-red-800 border border-red-300";
+                feedback.innerHTML = "<i class='fas fa-times-circle mr-1'></i> Susunan belum tepat. Perhatikan urutan kata sifat dan tata bahasanya.";
+            }
+        }
+
+        function updateProgressLatihan() {
+            const count = completedLevels.size;
+            const percent = Math.round((count / 3) * 100);
+            document.getElementById('progress-latihan').innerText = `${count} / 3 Selesai`;
+            document.getElementById('bar-latihan').style.width = percent + "%";
+        }
+
+        // Initialize Level 0 on Load
+        window.onload = function() {
+            loadLevel(0);
+        };
+
+        // 5. EVALUASI KUIS (5 SOAL)
+        function submitQuiz() {
+            let score = 0;
+            const answers = { q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'B' };
+
+            for(let key in answers) {
+                const selected = document.querySelector(`input[name="${key}"]:checked`);
+                if(selected && selected.value === answers[key]) {
+                    score += 20;
+                }
+            }
+
+            const quizResult = document.getElementById('quiz-result');
+            const scoreText = document.getElementById('score-text');
+            const feedbackText = document.getElementById('feedback-text');
+
+            quizResult.classList.remove('hidden');
+            scoreText.innerText = score;
+
+            if (score >= 80) {
+                feedbackText.innerText = "Sangat Baik! Anda menguasai struktur dan tata bahasa teks deskriptif dengan baik.";
+            } else {
+                feedbackText.innerText = "Cukup Baik! Silakan baca kembali modul materi untuk memperdalam pemahaman.";
+            }
+
+            // Update Dasbor Progress
+            document.getElementById('progress-kuis').innerText = `Skor: ${score} / 100`;
+            document.getElementById('bar-kuis').style.width = score + "%";
+        }
+
+        // 6. LOGIKA REFLEKSI MANDIRI
+        function saveReflection() {
+            const input = document.getElementById('refleksi-input').value;
+            if(input.trim() !== "") {
+                document.getElementById('refleksi-msg').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('refleksi-msg').classList.add('hidden');
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
